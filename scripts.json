@@ -15,7 +15,13 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : []
+        "args"      : [ "--local", "--stage", "--prod" ]
+    },
+    "preview" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : [ "--stage", "--prod" ]
     },
     "update" : {
         "reqConfig" : true,
@@ -39,7 +45,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : []
+        "args"      : [ "--stage", "--prod" ]
     },
     "stage" : {
         "reqConfig" : true,
@@ -51,6 +57,18 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
+        "args"      : []
+    },
+    "command" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : [ "command" ]
+    },
+    "icons" : {
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : false,
         "args"      : []
     }
 }
