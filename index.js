@@ -20,26 +20,24 @@ console.log(chalk.yellow(
 const currentPath = process.cwd();
 const basePath    = path.basename(currentPath);
 if (fs.existsSync(`${basePath}/runner.json`)) {
-    output.error("You must have a runner.json file");
-    process.exit();
+    output.exit("You must have a runner.json file");
 }
 
 const scriptName = process.argv[2];
 if (!scriptName) {
-    output.error("You must provide a script name");
-    process.exit();
-}
-
-const configData   = fs.readFileSync(`${currentPath}/runner.json`);
-const config       = JSON.parse(configData.toString());
-const scriptConfig = config[scriptName];
-if (!scriptConfig) {
-    output.error("You must provide a script config");
-    process.exit();
+    output.exit("You must provide a script name");
 }
 
 const scriptPath = path.join(__dirname, "lib", "script", scriptName);
-const params     = process.argv.slice(3);
-if (fs.existsSync(`${scriptPath}.js`)) {
-    require(scriptPath)(scriptConfig, params);
+const scriptFile = fs.readFileSync(path.join(__dirname, "scripts.json"));
+const scriptData = JSON.parse(scriptFile.toString());
+
+if (scriptData && scriptData[scriptName]) {
+    const configFile   = fs.readFileSync(`${currentPath}/runner.json`);
+    const configData   = JSON.parse(configFile.toString());
+    const configScript = configData[scriptName];
+    const params       = process.argv.slice(3);
+
+    const [ config, args ] = Config.parse(scriptData[scriptName], configScript, params);
+    require(scriptPath)(config, args);
 }

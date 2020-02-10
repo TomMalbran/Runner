@@ -1,0 +1,56 @@
+{
+    "date" : {
+        "reqConfig" : false,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : [ "time" ]
+    },
+    "info" : {
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : []
+    },
+    "start" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    },
+    "update" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    },
+    "install" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : [ "module" ]
+    },
+    "audit" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : [ "--force" ]
+    },
+    "build" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    },
+    "stage" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    },
+    "deploy" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    }
+}
