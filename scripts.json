@@ -6,10 +6,16 @@
         "args"      : [ "time" ]
     },
     "info" : {
-        "reqConfig" : true,
+        "reqConfig" : false,
         "reqType"   : false,
         "hasSystem" : false,
         "args"      : []
+    },
+    "version" : {
+        "reqConfig" : false,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : [ "type", "--undo" ]
     },
     "start" : {
         "reqConfig" : true,
@@ -47,17 +53,17 @@
         "hasSystem" : true,
         "args"      : [ "--stage", "--prod" ]
     },
-    "stage" : {
-        "reqConfig" : true,
-        "reqType"   : true,
-        "hasSystem" : true,
-        "args"      : []
-    },
     "deploy" : {
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : []
+    },
+    "migrations" : {
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : [ "--user", "--delete", "--recreate" ]
     },
     "command" : {
         "reqConfig" : true,

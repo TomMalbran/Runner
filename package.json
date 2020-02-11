@@ -27,6 +27,7 @@
         "clear": "^0.1.0",
         "figlet": "^1.2.4",
         "inquirer": "^7.0.4",
+        "node-fetch": "^2.6.0",
         "shelljs": "^0.8.3"
     }
 }

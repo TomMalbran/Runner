@@ -33,18 +33,16 @@ async function main() {
     const scriptData = JSON.parse(scriptFile.toString());
 
     if (scriptData && scriptData[scriptName]) {
-        let configData = {};
+        const configFile = FS.readFileSync(`${currentPath}/runner.json`);
+        let   configData = {};
         try {
-            const configFile = FS.readFileSync(`${currentPath}/runner.json`);
             configData = JSON.parse(configFile.toString());
         } catch (e) {
             Output.exit("The runner JSON is invalid");
         }
 
-        const configScript = configData[scriptName];
-        const params       = process.argv.slice(3);
-
-        const [ config, args ] = await Config.parse(scriptData[scriptName], configScript, params);
+        const params           = process.argv.slice(3);
+        const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
         require(scriptPath)(config, args);
     }
 }
