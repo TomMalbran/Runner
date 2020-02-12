@@ -12,10 +12,10 @@
         "args"      : []
     },
     "version" : {
-        "reqConfig" : false,
+        "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : false,
-        "args"      : [ "type", "--undo" ]
+        "args"      : [ "command", "--undo" ]
     },
     "start" : {
         "reqConfig" : true,
@@ -57,7 +57,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : []
+        "args"      : [ "--files", "--delete" ]
     },
     "migrations" : {
         "reqConfig" : true,
