@@ -21,13 +21,13 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--local", "--stage", "--prod" ]
+        "args"      : [ "--local", "--dev", "--stage", "--prod" ]
     },
     "preview" : {
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--stage", "--prod" ]
+        "args"      : [ "--dev", "--stage", "--prod" ]
     },
     "update" : {
         "reqConfig" : true,
@@ -51,7 +51,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--stage", "--prod" ]
+        "args"      : [ "--dev", "--stage", "--prod" ]
     },
     "deploy" : {
         "reqConfig" : true,

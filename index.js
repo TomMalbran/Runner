@@ -31,20 +31,21 @@ async function main() {
     const scriptPath = Path.join(__dirname, "lib", "script", scriptName);
     const scriptFile = FS.readFileSync(Path.join(__dirname, "scripts.json"));
     const scriptData = JSON.parse(scriptFile.toString());
-
-    if (scriptData && scriptData[scriptName]) {
-        const configFile = FS.readFileSync(`${currentPath}/runner.json`);
-        let   configData = {};
-        try {
-            configData = JSON.parse(configFile.toString());
-        } catch (e) {
-            Output.exit("The runner JSON is invalid");
-        }
-
-        const params           = process.argv.slice(3);
-        const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
-        require(scriptPath)(config, args);
+    if (!scriptData || !scriptData[scriptName]) {
+        Output.exit(`The script "${scriptName}" does not exist`);
     }
+
+    const configFile = FS.readFileSync(`${currentPath}/runner.json`);
+    let   configData = {};
+    try {
+        configData = JSON.parse(configFile.toString());
+    } catch (e) {
+        Output.exit("The runner JSON is invalid");
+    }
+
+    const params           = process.argv.slice(3);
+    const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
+    require(scriptPath)(config, args);
 }
 
 main();
