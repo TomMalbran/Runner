@@ -55,9 +55,15 @@
     },
     "deploy" : {
         "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : [ "--dev", "--stage", "--prod", "--files", "--delete" ]
+    },
+    "publish" : {
+        "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--files", "--delete" ]
+        "args"      : [ "platform", "--dev", "--stage", "--prod" ]
     },
     "migrations" : {
         "reqConfig" : true,
@@ -65,11 +71,23 @@
         "hasSystem" : false,
         "args"      : [ "--user", "--delete", "--recreate" ]
     },
+    "library" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
+    },
     "command" : {
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "command" ]
+    },
+    "minify" : {
+        "reqConfig" : true,
+        "reqType"   : true,
+        "hasSystem" : true,
+        "args"      : []
     },
     "icons" : {
         "reqConfig" : true,
