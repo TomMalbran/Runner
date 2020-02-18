@@ -21,7 +21,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--local", "--dev", "--stage", "--prod" ]
+        "args"      : [ "device", "--local", "--dev", "--stage", "--prod" ]
     },
     "preview" : {
         "reqConfig" : true,
