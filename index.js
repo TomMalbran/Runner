@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+const Help   = require("./lib/script/help");
 const Output = require("./lib/utils/output");
 const Config = require("./lib/utils/config");
 
@@ -23,18 +24,11 @@ async function main() {
         Output.exit("You must have a runner.json file");
     }
 
-    const scriptName = process.argv[2];
-    if (!scriptName) {
-        Output.exit("You must provide a script name");
-    }
-
-    const scriptPath = Path.join(__dirname, "lib", "script", scriptName);
+    // Read the Scripts Data
     const scriptFile = FS.readFileSync(Path.join(__dirname, "scripts.json"));
     const scriptData = JSON.parse(scriptFile.toString());
-    if (!scriptData || !scriptData[scriptName]) {
-        Output.exit(`The script "${scriptName}" does not exist`);
-    }
 
+    // Read the Config Data
     const configFile = FS.readFileSync(`${currentPath}/runner.json`);
     let   configData = {};
     try {
@@ -43,8 +37,19 @@ async function main() {
         Output.exit("The runner JSON is invalid");
     }
 
+    const scriptName = process.argv[2];
+    if (!scriptName) {
+        Help(scriptData, configData);
+        return;
+    }
+
+    if (!scriptData || !scriptData[scriptName]) {
+        Output.exit(`The script "${scriptName}" does not exist`);
+    }
+
     const params           = process.argv.slice(3);
     const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
+    const scriptPath       = Path.join(__dirname, "lib", "script", scriptName);
     require(scriptPath)(config, args);
 }
 
