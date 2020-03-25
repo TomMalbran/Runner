@@ -45,7 +45,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "--force" ]
+        "args"      : [ "--fix" ]
     },
     "build" : {
         "reqConfig" : true,
