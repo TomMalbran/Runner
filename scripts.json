@@ -1,4 +1,10 @@
 {
+    "timer" : {
+        "reqConfig" : false,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : []
+    },
     "date" : {
         "reqConfig" : false,
         "reqType"   : false,
