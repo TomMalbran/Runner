@@ -77,6 +77,12 @@
         "hasSystem" : false,
         "args"      : [ "--user", "--delete", "--recreate" ]
     },
+    "job" : {
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : []
+    },
     "library" : {
         "reqConfig" : true,
         "reqType"   : true,
