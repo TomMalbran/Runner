@@ -75,7 +75,7 @@
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : false,
-        "args"      : [ "--user", "--delete", "--recreate" ]
+        "args"      : [ "--user", "--delete", "--recreate", "--sandbox" ]
     },
     "job" : {
         "reqConfig" : true,
