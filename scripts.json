@@ -69,7 +69,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "platform", "--dev", "--stage", "--prod" ]
+        "args"      : [ "platform", "--dev", "--stage", "--prod", "--clean" ]
     },
     "migrations" : {
         "reqConfig" : true,
