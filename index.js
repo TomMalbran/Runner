@@ -49,6 +49,15 @@ async function main() {
         Help(scriptData, configData);
         return;
     }
+    // Show the Version
+    if (scriptName === "-v") {
+        return Output.result(configData.version);
+    }
+    // Show the Url
+    if (scriptName === "-url") {
+        return Output.result(configData.local);
+    }
+    
 
     // Try to get the correct script
     const configScripts = configData.scripts;
