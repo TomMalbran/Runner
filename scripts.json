@@ -1,4 +1,11 @@
 {
+    "info" : {
+        "title"     : "The current Info",
+        "reqConfig" : false,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : []
+    },
     "timer" : {
         "reqConfig" : false,
         "reqType"   : false,
@@ -6,60 +13,63 @@
         "args"      : []
     },
     "date" : {
+        "title"     : "Returns the Date",
         "reqConfig" : false,
         "reqType"   : false,
         "hasSystem" : false,
         "args"      : [ "time" ]
     },
-    "info" : {
-        "reqConfig" : false,
-        "reqType"   : false,
-        "hasSystem" : false,
-        "args"      : []
-    },
     "version" : {
+        "title"     : "Updating the Version",
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : false,
         "args"      : [ "command", "--undo" ]
     },
     "start" : {
+        "title"     : "Starting the System",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "device", "--local", "--dev", "--stage", "--prod" ]
     },
     "preview" : {
+        "title"     : "Previewing the System",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "--dev", "--stage", "--prod" ]
     },
     "update" : {
+        "title"     : "Updating the System",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : []
     },
     "install" : {
+        "title"     : "Installing a Module",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "module" ]
     },
     "audit" : {
+        "title"     : "Auditing the System",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "--fix" ]
     },
     "build" : {
+        "title"     : "Building the System",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "--dev", "--stage", "--prod" ]
     },
     "deploy" : {
+        "title"     : "Deploying the System",
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : true,
@@ -72,36 +82,42 @@
         "args"      : [ "platform", "--dev", "--stage", "--prod", "--clean" ]
     },
     "migrations" : {
+        "title"     : "Executing the Migrations",
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : false,
         "args"      : [ "--user", "--delete", "--recreate", "--sandbox" ]
     },
     "job" : {
+        "title"     : "Executing the Job",
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : true,
         "args"      : []
     },
     "library" : {
+        "title"     : "Updating a Library",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : []
     },
     "command" : {
+        "title"     : "Running a Command",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : [ "command" ]
     },
     "minify" : {
+        "title"     : "Minifing the Files",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
         "args"      : []
     },
     "icons" : {
+        "title"     : "Updating the Icons",
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : false,

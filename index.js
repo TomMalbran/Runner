@@ -15,8 +15,14 @@ const Clear  = require("clear");
  * @returns {Promise}
  */
 async function main() {
-    Clear();
-    Output.logo("Runner");
+    let   scriptName = process.argv[2];
+    const params     = process.argv.slice(3);
+    const silent     = params.includes("--silent");
+
+    if (!silent) {
+        Clear();
+        Output.logo("Runner");
+    }
 
     const currentPath = process.cwd();
     const basePath    = Path.basename(currentPath);
@@ -37,20 +43,33 @@ async function main() {
         Output.exit("The runner JSON is invalid");
     }
 
-    const scriptName = process.argv[2];
+
+    // Show some help
     if (!scriptName) {
         Help(scriptData, configData);
         return;
     }
 
-    if (!scriptData || !scriptData[scriptName]) {
-        Output.exit(`The script "${scriptName}" does not exist`);
+    // Try to get the correct script
+    const configScripts = configData.scripts;
+    if (!scriptData[scriptName]) {
+        if (configScripts.script && configScripts.script[scriptName]) {
+            params.unshift(scriptName);
+            scriptName = "script";
+        } else {
+            Output.exit(`The script "${scriptName}" does not exist`);
+        }
+    } else if (scriptData[scriptName].reqConfig && !configData[scriptName] && configScripts.script && configScripts.script[scriptName]) {
+        params.unshift(scriptName);
+        scriptName = "script";
     }
 
-    const params           = process.argv.slice(3);
+    // Execute the Command
+    Output.title(scriptData[scriptName].title, silent);
     const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
     const scriptPath       = Path.join(__dirname, "lib", "script", scriptName);
-    require(scriptPath)(config, args);
+    const response         = await require(scriptPath)(config, args);
+    Output.done(!response || silent);
 }
 
 main();
