@@ -95,6 +95,13 @@
         "hasSystem" : true,
         "args"      : []
     },
+    "api" : {
+        "title"     : "Executing the API",
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : []
+    },
     "library" : {
         "title"     : "Updating a Library",
         "reqConfig" : true,
