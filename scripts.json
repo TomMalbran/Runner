@@ -122,5 +122,12 @@
         "reqType"   : false,
         "hasSystem" : false,
         "args"      : []
+    },
+    "script" : {
+        "title"     : "Executing a Script",
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : []
     }
 }
