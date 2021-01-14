@@ -53,6 +53,10 @@ async function main() {
     if (scriptName === "-v") {
         return Output.result(configData.version);
     }
+    // Show the Version and Build
+    if (scriptName === "-vb") {
+        return Output.result(`${configData.version}-${configData.build}`);
+    }
     // Show the Url
     if (scriptName === "-url") {
         return Output.result(configData.local);
