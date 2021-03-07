@@ -61,7 +61,7 @@ async function main() {
     if (scriptName === "-url") {
         return Output.result(configData.local);
     }
-    
+
 
     // Try to get the correct script
     const configScripts = configData.scripts;
