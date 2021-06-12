@@ -26,7 +26,7 @@ async function main() {
 
     const currentPath = process.cwd();
     const basePath    = Path.basename(currentPath);
-    if (FS.existsSync(`${basePath}/runner.json`)) {
+    if (!FS.existsSync(`${currentPath}/runner.json`)) {
         Output.exit("You must have a runner.json file");
     }
 
