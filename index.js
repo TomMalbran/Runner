@@ -82,7 +82,7 @@ async function main() {
     const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
     const scriptPath       = Path.join(__dirname, "lib", "script", scriptName);
     const response         = await require(scriptPath)(config, args);
-    Output.done(!response || silent);
+    Output.done(!response || silent);
 }
 
 main();
