@@ -79,9 +79,9 @@ async function main() {
 
     // Execute the Command
     Output.title(scriptData[scriptName].title, silent);
-    const [ config, args ] = await Config.parse(scriptName, scriptData, configData, params);
-    const scriptPath       = Path.join(__dirname, "lib", "script", scriptName);
-    const response         = await require(scriptPath)(config, args);
+    const { config, args, env } = await Config.parse(scriptName, scriptData, configData, params);
+    const scriptPath            = Path.join(__dirname, "lib", "script", scriptName);
+    const response              = await require(scriptPath)(config, args, env);
     Output.done(!response || silent);
 }
 
