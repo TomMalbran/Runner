@@ -79,7 +79,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : [ "platform", "--dev", "--stage", "--prod", "--clean" ]
+        "args"      : [ "platform", "--dev", "--stage", "--preapp", "--prod", "--clean" ]
     },
     "migrations" : {
         "title"     : "Executing the Migrations",
