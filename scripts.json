@@ -45,7 +45,7 @@
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
-        "args"      : []
+        "args"      : [ "--force" ]
     },
     "install" : {
         "title"     : "Installing a Module",
