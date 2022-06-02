@@ -85,7 +85,7 @@
         "title"     : "Executing the Migrations",
         "reqConfig" : true,
         "reqType"   : false,
-        "hasSystem" : false,
+        "hasSystem" : true,
         "args"      : [ "url", "--user", "--delete", "--recreate", "--sandbox", "--create" ]
     },
     "job" : {
