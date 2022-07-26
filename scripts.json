@@ -86,6 +86,7 @@
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : true,
+        "reqArg"    : "url",
         "args"      : [ "url", "--user", "--delete", "--recreate", "--sandbox", "--create" ]
     },
     "job" : {
