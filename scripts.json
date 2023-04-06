@@ -131,6 +131,13 @@
         "hasSystem" : false,
         "args"      : []
     },
+    "execute" : {
+        "title"     : "Executing multiple commands",
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : []
+    },
     "script" : {
         "title"     : "Executing a Script",
         "reqConfig" : true,
