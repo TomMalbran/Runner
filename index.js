@@ -17,9 +17,9 @@ const Clear  = require("clear");
 async function main() {
     let   scriptName = process.argv[2];
     const params     = process.argv.slice(3);
-    const silent     = params.includes("--silent");
+    const isSilent   = params.includes("--silent");
 
-    if (!silent) {
+    if (!isSilent) {
         Clear();
         Output.logo("Runner");
     }
@@ -78,11 +78,11 @@ async function main() {
     }
 
     // Execute the Command
-    Output.title(scriptData[scriptName].title, silent);
+    Output.title(scriptData[scriptName].title, isSilent);
     const { config, args, env } = await Config.parse(scriptName, scriptData, configData, params);
     const scriptPath            = Path.join(__dirname, "lib", "script", scriptName);
     const response              = await require(scriptPath)(config, args, env);
-    Output.done(!response || silent);
+    Output.done(!response || isSilent);
 }
 
 main();
