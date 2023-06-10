@@ -73,7 +73,7 @@
         "reqConfig" : true,
         "reqType"   : false,
         "hasSystem" : true,
-        "args"      : [ "--dev", "--stage", "--preapp", "--prod", "--files", "--recreate", "--delete" ]
+        "args"      : [ "--dev", "--stage", "--preapp", "--prod", "--files", "--recreate", "--delete", "--nobuild" ]
     },
     "publish" : {
         "reqConfig" : true,
