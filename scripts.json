@@ -118,7 +118,7 @@
         "args"      : [ "command" ]
     },
     "minify" : {
-        "title"     : "Minifing the Files",
+        "title"     : "Minifying the Files",
         "reqConfig" : true,
         "reqType"   : true,
         "hasSystem" : true,
