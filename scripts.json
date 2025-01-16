@@ -152,6 +152,13 @@
         "hasSystem" : false,
         "args"      : []
     },
+    "redis" : {
+        "title"     : "Starts redis",
+        "reqConfig" : false,
+        "reqType"   : false,
+        "hasSystem" : false,
+        "args"      : []
+    },
     "svg" : {
         "title"     : "Converts a png to svg",
         "reqConfig" : false,
