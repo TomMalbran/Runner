@@ -125,6 +125,13 @@
         "args"      : []
     },
     "icons" : {
+        "title"     : "Generating the Icons",
+        "reqConfig" : true,
+        "reqType"   : false,
+        "hasSystem" : true,
+        "args"      : []
+    },
+    "icomoon" : {
         "title"     : "Updating the Icons",
         "reqConfig" : true,
         "reqType"   : false,
