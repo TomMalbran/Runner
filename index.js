@@ -21,12 +21,11 @@ async function main() {
 
     if (!isSilent) {
         Clear();
-        Output.logo("Runner");
     }
 
     const currentPath = process.cwd();
-    const basePath    = Path.basename(currentPath);
     if (!FS.existsSync(`${currentPath}/runner.json`)) {
+        Output.logo("Runner");
         Output.exit("You must have a runner.json file");
     }
 
@@ -40,9 +39,13 @@ async function main() {
     try {
         configData = JSON.parse(configFile.toString());
     } catch (e) {
+        Output.logo("Runner");
         Output.exit("The runner JSON is invalid");
     }
 
+
+    // Show the Title
+    Output.logo(configData.name || "Runner");
 
     // Show some help
     if (!scriptName) {
