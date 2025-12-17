@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "checkJs"          : true,
+        "jsx"              : "react",
+        "target"           : "es2022",
+        "moduleResolution" : "node"
+    },
+    "exclude": [
+        "**/dist/**",
+        "**/node_modules/**"
+    ]
+}
