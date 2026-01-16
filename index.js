@@ -42,29 +42,37 @@ async function main() {
         Output.logo("Runner");
         Output.exit("The runner JSON is invalid");
     }
+    const title = configData.title || "Runner";
 
-
-    // Show the Title
-    Output.logo(configData.name || "Runner");
 
     // Show some help
     if (!scriptName) {
+        Output.logo(title);
         Help(scriptData, configData);
         return;
     }
+
     // Show the Version
     if (scriptName === "-v") {
+        Output.logo(title);
         return Output.result(configData.version);
     }
+
     // Show the Version and Build
     if (scriptName === "-vb") {
+        Output.logo(title);
         return Output.result(`${configData.version}-${configData.build}`);
     }
+
     // Show the Url
     if (scriptName === "-url") {
+        Output.logo(title);
         return Output.result(configData.local);
     }
 
+
+    // Show the Title
+    Output.logo(title, isSilent);
 
     // Try to get the correct script
     const configScripts = configData.scripts;
@@ -84,7 +92,7 @@ async function main() {
     Output.title(scriptData[scriptName].title, isSilent);
     const { config, args, env } = await Config.parse(scriptName, scriptData, configData, params);
     const scriptPath            = Path.join(__dirname, "lib", "script", scriptName);
-    const response              = await require(scriptPath)(config, args, env);
+    const response              = await require(scriptPath)(config, args, env, isSilent);
     Output.done(!response || isSilent);
 }
 
