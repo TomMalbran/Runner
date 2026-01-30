@@ -42,7 +42,7 @@ async function main() {
         Output.logo("Runner");
         Output.exit("The runner JSON is invalid");
     }
-    const title = configData.title || "Runner";
+    const title = configData.name || "Runner";
 
 
     // Show some help
