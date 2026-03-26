@@ -23,10 +23,10 @@
         "chalk": "^3.0.0",
         "clear": "^0.1.0",
         "cli-spinner": "^0.2.10",
-        "figlet": "^1.5.0",
+        "figlet": "^1.11.0",
         "inquirer": "^7.3.3",
-        "node-fetch": "^2.6.1",
-        "shelljs": "^0.8.4",
+        "node-fetch": "^2.7.0",
+        "shelljs": "^0.8.5",
         "svgtofont": "^4.2.3"
     }
 }
