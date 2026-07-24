@@ -3,6 +3,7 @@
 const Help   = require("./lib/script/help");
 const Output = require("./lib/utils/output");
 const Config = require("./lib/utils/config");
+const Build  = require("./lib/utils/build");
 
 const FS     = require("fs");
 const Path   = require("path");
@@ -42,6 +43,10 @@ async function main() {
         Output.logo("Runner");
         Output.exit("The runner JSON is invalid");
     }
+
+    // Use the Build from the shared Build file when there is one
+    configData.build = Build.readBuild(configData.build);
+
     const title = configData.name || "Runner";
 
 
